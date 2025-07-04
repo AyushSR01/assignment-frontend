@@ -164,7 +164,7 @@ export default function Dashboard() {
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-white text-gray-800 font-sans">
       {/* Topbar */}
       <header className="bg-blue-600 text-white py-4 px-6 flex justify-between items-center shadow">
-        <h1 className="text-2xl font-bold text-white tracking-wide animate-pulse">Helpdesk</h1>
+        <Link to="/"><h1 className="text-2xl font-bold text-white tracking-wide animate-pulse">Helpdesk</h1></Link>
         <div className="space-x-4 text-sm">
           <span className="bg-green-400  text-black px-2 py-1 rounded-full">EN</span>
           <button title="Notifications" className='rounded-full bg-white p-1 hover:scale-150 hover:bg-gray-200 transition-all '>🔔</button>
