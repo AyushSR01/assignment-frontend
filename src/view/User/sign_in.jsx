@@ -57,7 +57,7 @@ export default function AuthForm() {
           </button>
           
         </form>
-        <a href="/signup" className='text-blue-600'>Sign up</a>
+        <Link to="/signup" className='text-blue-600'>Sign up</Link>
           
     </div>
     </div>
