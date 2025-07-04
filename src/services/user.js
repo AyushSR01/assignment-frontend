@@ -3,7 +3,9 @@ import axios from "axios";
 const authApi = async (body) => {
   try {
     const url = `${import.meta.env.VITE_BACKEND_URL}/user/auth`;
-    const res = await axios.post(url, body);
+    const res = await axios.post(url, body,{
+  withCredentials: true
+});
     return res.data;
   } catch (err) {
     // Enhanced error handling
@@ -13,7 +15,9 @@ const authApi = async (body) => {
 const authApi2 = async (body) => {
   try {
     const url = `${import.meta.env.VITE_BACKEND_URL}/user/authup`;
-    const res = await axios.post(url, body);
+    const res = await axios.post(url, body,{
+  withCredentials: true
+});
     return res.data;
   } catch (err) {
     // Enhanced error handling
@@ -30,7 +34,9 @@ const authApi2 = async (body) => {
       headers:{
         Authorization:`Bearer ${token}`
       }
-    });
+    },{
+  withCredentials: true
+});
 
     // Optionally log response for dev
     // console.log("✅ Ticket created:", res.data);
@@ -53,10 +59,12 @@ const authApi2 = async (body) => {
 const getTicket=async(id)=>{
   const url = `${import.meta.env.VITE_BACKEND_URL}/user/getting-tickets/${id}`;
   try{
-    const ticketData=await axios.get(url)
+    const ticketData=await axios.get(url, {
+  withCredentials: true
+});
     return ticketData;
   }
-  catch{
+  catch(err){
     const message =
       err?.response?.data?.message ||
       err?.message ||
@@ -69,10 +77,12 @@ const getTicket=async(id)=>{
 const getProfile=async(id)=>{
   const url = `${import.meta.env.VITE_BACKEND_URL}/user/getting-user/${id}`;
   try{
-    const proData=await axios.get(url)
+    const proData=await axios.get(url,{
+  withCredentials: true
+});
     return proData;
   }
-  catch{
+  catch(err){
     const message =
       err?.response?.data?.message ||
       err?.message ||

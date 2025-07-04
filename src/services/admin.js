@@ -3,7 +3,9 @@ import axios from "axios";
 const getDetailsOfOperator = async()=>{
     try{
         const url = `${import.meta.env.VITE_BACKEND_URL}/admin/getting-operator`;
-        const res = await axios.get(url);
+        const res = await axios.get(url,{
+  withCredentials: true
+});
         return res.data;
     }
     catch (err) {
@@ -13,7 +15,9 @@ const getDetailsOfOperator = async()=>{
 const getDetailsOfUser = async()=>{
     try{
         const url = `${import.meta.env.VITE_BACKEND_URL}/admin/getting-user`;
-        const res = await axios.get(url);
+        const res = await axios.get(url,{
+  withCredentials: true
+});
         return res.data;
     }
     catch (err) {
@@ -23,7 +27,9 @@ const getDetailsOfUser = async()=>{
 const deleteUser = async(id)=>{
     try{
         const url = `${import.meta.env.VITE_BACKEND_URL}/admin/delete-adminuser/${id}`;
-        const res = await axios.post(url);
+        const res = await axios.post(url,{
+  withCredentials: true
+});
         return res.data;
     }
     catch (err) {
@@ -33,7 +39,9 @@ const deleteUser = async(id)=>{
 const deleteOperator = async(id)=>{
     try{
         const url = `${import.meta.env.VITE_BACKEND_URL}/admin/delete-adminop/${id}`;
-        const res = await axios.post(url);
+        const res = await axios.post(url,{
+  withCredentials: true
+});
         return res.data;
     }
     catch (err) {
@@ -43,7 +51,9 @@ const deleteOperator = async(id)=>{
 const createOperator = async (formData) => {
   console.log("yahan bhi");
   const url = `${import.meta.env.VITE_BACKEND_URL}/admin/adding-op`;
-  const res = await axios.post(url, formData);
+  const res = await axios.post(url, formData,{
+  withCredentials: true
+});
   return res.data;
 };
 
